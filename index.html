@@ -469,12 +469,26 @@
               </div>
             </div>
 
-            <h3 class="font-serif-display text-2xl sm:text-3xl font-semibold mb-3">
-              METI QC Production Dashboard
-            </h3>
-            <p class="text-sm sm:text-base leading-relaxed max-w-3xl mb-6" style="color: var(--ink-secondary);">
-              A full-stack, multi-shift Quality Control &amp; Production Assessment platform architected across 66 iterative releases to manage Morning (M), Night (N), and Overnight (ON) operations — automating daily Passed/Failed labeler metrics, enforcing server-side role security, and providing a full rollback-capable Audit Log.
-            </p>
+            <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-4 mb-6">
+              <div class="max-w-3xl">
+                <h3 class="font-serif-display text-2xl sm:text-3xl font-semibold mb-3">
+                  METI QC Production Dashboard
+                </h3>
+                <p class="text-sm sm:text-base leading-relaxed" style="color: var(--ink-secondary);">
+                  A full-stack, multi-shift Quality Control &amp; Production Assessment platform architected across 66 iterative releases to manage Morning (M), Night (N), and Overnight (ON) operations — automating daily Passed/Failed labeler metrics, enforcing server-side role security, and providing a full rollback-capable Audit Log.
+                </p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+                <a href="https://meti-qc-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>Live Demo</span>
+                </a>
+                <a href="https://github.com/Mosad09/Meti-QC-Dashboard" target="_blank" rel="noopener noreferrer" class="btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
 
             <!-- Interactive Case Study Tabs -->
             <div class="flex flex-wrap gap-2" role="tablist" aria-label="QC Production Architecture Tabs">
@@ -661,6 +675,84 @@
             </div>
           </div>
         </article>
+
+        <!-- Live Deployed Web Applications Grid -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <!-- Project 2: METI LiDAR Quality Dashboard -->
+          <article class="surface-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: var(--accent-soft); color: var(--accent);">
+                  <i data-lucide="activity" class="w-3.5 h-3.5"></i>
+                  QA Analytics Portal · GitHub Pages
+                </span>
+              </div>
+
+              <h3 class="font-serif-display text-2xl font-semibold mb-2.5">
+                METI LiDAR Quality Dashboard
+              </h3>
+              <p class="text-sm leading-relaxed mb-5" style="color: var(--ink-secondary);">
+                Self-service LiDAR quality portal connected to Google Sheets via a deployed Google Apps Script REST API. Annotators look up their full task history by email, filter by quick ranges or custom dates, and review color-coded campaign averages across <strong style="color: var(--ink);">Artifacts</strong>, <strong style="color: var(--ink);">Attribute</strong>, and <strong style="color: var(--ink);">Total Accuracy</strong> (&ge;99% green, &ge;90% amber).
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-medium" style="color: var(--ink-muted);">
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">HTML5 / CSS3</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Vanilla JS</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Apps Script REST API</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Glassmorphism UI</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t" style="border-color: var(--border);">
+              <a href="https://mosad09.github.io/Quality-Dashboard/" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>Live Demo</span>
+              </a>
+              <a href="https://github.com/Mosad09/Quality-Dashboard" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Veltrix Phone Accessories Store -->
+          <article class="surface-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold" style="background-color: var(--gold-soft); color: var(--gold);">
+                  <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+                  E-Commerce Storefront · Firebase
+                </span>
+              </div>
+
+              <h3 class="font-serif-display text-2xl font-semibold mb-2.5">
+                Veltrix — Tech &amp; Phone Accessories
+              </h3>
+              <p class="text-sm leading-relaxed mb-5" style="color: var(--ink-secondary);">
+                Bilingual (Arabic &amp; English) e-commerce web application hosted on Firebase for curated phone cases, chargers, and audio gear. Features instant product search, category &amp; sort filters, an interactive EGP price-range slider, wishlist, live shopping cart counter, dark/light theme toggle, and user authentication.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mb-6 text-[11px] font-medium" style="color: var(--ink-muted);">
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Vite SPA</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Firebase Hosting</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Bootstrap 5</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Bilingual AR / EN</span>
+                <span class="px-2.5 py-1 rounded-md border" style="border-color: var(--border); background-color: var(--bg);">Dark &amp; Light Mode</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t" style="border-color: var(--border);">
+              <a href="https://my-store-6a861.web.app/" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                <span>Live Demo</span>
+              </a>
+              <a href="https://github.com/Mosad09/phone-accessories" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </article>
+        </div>
 
         <!-- Secondary Project: Automated Google Sheets KPI & Queue Reporting Engine -->
         <article class="surface-card rounded-3xl p-6 sm:p-8">
@@ -1023,7 +1115,7 @@
           "HTML5 & CSS3", "JavaScript (ES6+)", "React", "Bootstrap & jQuery", "PHP",
           "Supabase (PostgreSQL & Auth)", "Row-Level Security (RLS) & SQL RPC",
           "Role-Based Access Control (RBAC)", "Google Apps Script", "Git & GitHub",
-          "Vercel CI/CD", "C++ & Data Structures", "Statistics & Probability"
+          "Vercel CI/CD", "Firebase Hosting", "C++ & Data Structures", "Statistics & Probability"
         ]
       },
       {
