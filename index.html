@@ -479,10 +479,10 @@
                 </p>
               </div>
               <div class="flex flex-wrap items-center gap-2.5 shrink-0">
-                <a href="https://meti-qc-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
-                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                  <span>Live Demo</span>
-                </a>
+                <button type="button" data-open-demo="qc" class="btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                  <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
+                  <span>Interactive Demo</span>
+                </button>
                 <a href="https://github.com/Mosad09/Meti-QC-Dashboard" target="_blank" rel="noopener noreferrer" class="btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
                   <i data-lucide="github" class="w-3.5 h-3.5"></i>
                   <span>Source Code</span>
@@ -704,10 +704,10 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t" style="border-color: var(--border);">
-              <a href="https://mosad09.github.io/Quality-Dashboard/" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
-                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                <span>Live Demo</span>
-              </a>
+              <button type="button" data-open-demo="lidar" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
+                <span>Interactive Demo</span>
+              </button>
               <a href="https://github.com/Mosad09/Quality-Dashboard" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
                 <i data-lucide="github" class="w-3.5 h-3.5"></i>
                 <span>GitHub Repo</span>
@@ -742,10 +742,10 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-2.5 pt-4 border-t" style="border-color: var(--border);">
-              <a href="https://my-store-6a861.web.app/" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
-                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                <span>Live Demo</span>
-              </a>
+              <button type="button" data-open-demo="veltrix" class="flex-1 sm:flex-none justify-center btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
+                <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
+                <span>Interactive Demo</span>
+              </button>
               <a href="https://github.com/Mosad09/phone-accessories" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none justify-center btn-secondary px-4 py-2.5 rounded-xl text-xs font-semibold inline-flex items-center gap-2">
                 <i data-lucide="github" class="w-3.5 h-3.5"></i>
                 <span>GitHub Repo</span>
@@ -998,6 +998,40 @@
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           <span>Download ATS PDF</span>
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Project Demo Modal -->
+  <div id="demoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-2.5 sm:p-5 bg-black/65 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle">
+    <div class="w-full max-w-5xl max-h-[92vh] rounded-2xl overflow-hidden flex flex-col border shadow-2xl" style="background-color: var(--bg-elevated); border-color: var(--border);">
+      <!-- Modal Top Bar -->
+      <div class="px-4 sm:px-6 py-3.5 border-b flex items-center justify-between gap-3 shrink-0" style="border-color: var(--border); background-color: var(--bg);">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="w-2.5 h-2.5 rounded-full shrink-0 status-dot" style="background-color: var(--accent);"></span>
+          <div class="min-w-0">
+            <h3 id="demoModalTitle" class="text-sm sm:text-base font-semibold truncate">Interactive Project Demo</h3>
+            <p id="demoModalSub" class="text-[11px] truncate" style="color: var(--ink-muted);">Live sandbox preview inside portfolio</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <a id="demoExternalLink" href="https://meti-qc-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-secondary px-3 py-1.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">Live Site</span>
+          </a>
+          <button id="demoLogoutBtn" type="button" class="hidden btn-secondary px-3 py-1.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+            <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+            <span class="hidden sm:inline">Lock</span>
+          </button>
+          <button id="closeDemoModalBtn" type="button" aria-label="Close demo" class="w-8 h-8 rounded-lg btn-secondary flex items-center justify-center">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Dynamic Body -->
+      <div id="demoModalBody" class="flex-1 overflow-y-auto p-4 sm:p-6" style="background-color: var(--bg);">
+        <!-- Rendered by JS -->
       </div>
     </div>
   </div>
@@ -1501,6 +1535,639 @@
         }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
         revealTargets.forEach(el => observer.observe(el));
       }
+    });
+
+    // =========================================================================
+    // INTERACTIVE IN-PORTFOLIO DEMO SANDBOX (QC Dashboard, LiDAR QA, Veltrix)
+    // =========================================================================
+    const DEMO_META = {
+      qc: {
+        title: "METI QC Production Dashboard — Interactive Demo",
+        sub: "Multi-Shift Operations · RBAC · Audit Log Rollback (v66 Sandbox)",
+        url: "https://meti-qc-dashboard.vercel.app/",
+        user: "demo",
+        pass: "1234",
+        roleLabel: "Admin · Full Shift Access"
+      },
+      lidar: {
+        title: "METI LiDAR Quality Dashboard — Interactive Demo",
+        sub: "Self-Service Annotator Accuracy & Campaign Analytics Sandbox",
+        url: "https://mosad09.github.io/Quality-Dashboard/",
+        user: "demo@meti.ai",
+        pass: "1234",
+        roleLabel: "Annotator · LiDAR QA Portal"
+      },
+      veltrix: {
+        title: "Veltrix Store — Interactive E-Commerce Demo",
+        sub: "Bilingual AR/EN Storefront · Live Filters · Cart & Wishlist Sandbox",
+        url: "https://my-store-6a861.web.app/",
+        user: "demo",
+        pass: "1234",
+        roleLabel: "Shopper · Veltrix Tech Store"
+      }
+    };
+
+    const DEMO_STATE = {
+      activeApp: null,
+      loggedIn: { qc: false, lidar: false, veltrix: false },
+      qc: {
+        tab: "overview",
+        shift: "ALL",
+        search: "",
+        roleFilter: "ALL",
+        rows: [
+          { id: 1, name: "QC Lead — Alpha", shift: "M", passed: 28, failed: 2, target: 30, rate: 93.33 },
+          { id: 2, name: "QC Specialist — Beta", shift: "N", passed: 29, failed: 1, target: 28, rate: 96.67 },
+          { id: 3, name: "QC Specialist — Gamma", shift: "N", passed: 22, failed: 6, target: 28, rate: 78.57 },
+          { id: 4, name: "QC Lead — Delta", shift: "ON", passed: 37, failed: 3, target: 40, rate: 92.50 },
+          { id: 5, name: "QC Specialist — Epsilon", shift: "M", passed: 25, failed: 3, target: 28, rate: 89.29 }
+        ],
+        users: [
+          { id: "u1", name: "Mosaad Magdy", role: "Admin", shift: "ALL", scope: "Full Shift + Audit" },
+          { id: "u2", name: "Shift Supervisor A", role: "SV", shift: "N", scope: "Own Team (Overview + Passed + Failed)" },
+          { id: "u3", name: "Senior SV B", role: "SSV", shift: "M", scope: "Overview + Passed Only" },
+          { id: "u4", name: "QC Reviewer C", role: "QC", shift: "ON", scope: "Own Team (Locked by RLS)" }
+        ],
+        audit: [
+          { id: "a1", shift: "N", target: "QC Specialist — Gamma", actor: "SV · 07:55 PM", action: "DELETED LABELER", cls: "audit-row-delete", badge: "text-red-500", delta: "Target: 30 → 28", reason: "Shift reassignment", restored: false },
+          { id: "a2", shift: "N", target: "QC Specialist — Gamma", actor: "Auto-Sync · 07:55 PM", action: "EDITED QC", cls: "audit-row-edit", badge: "text-amber-500", delta: "73.3% → 78.6%", reason: "Shift reassignment", restored: false },
+          { id: "a3", shift: "M", target: "QC Lead — Alpha", actor: "Admin · 02:18 PM", action: "RESTORED", cls: "audit-row-restore", badge: "text-emerald-500", delta: "90.0% → 93.3%", reason: "Duplicate edit reverted", restored: true }
+        ]
+      },
+      lidar: {
+        range: "allTime",
+        tasks: [
+          { id: "LDR-98412", campaign: "SC3 Full Scene Lanes 3D", daysAgo: 1, date: "Yesterday", artifacts: 99.4, attribute: 98.8, total: 99.1 },
+          { id: "LDR-98390", campaign: "SC3 Full Scene Lanes 3D", daysAgo: 3, date: "3 days ago", artifacts: 99.6, attribute: 99.2, total: 99.4 },
+          { id: "LDR-97810", campaign: "Highway Cuboids 200F", daysAgo: 6, date: "6 days ago", artifacts: 95.5, attribute: 94.0, total: 94.8 },
+          { id: "LDR-97104", campaign: "Highway Cuboids 200F", daysAgo: 12, date: "12 days ago", artifacts: 99.1, attribute: 99.0, total: 99.1 },
+          { id: "LDR-96221", campaign: "Urban Pedestrians 100F", daysAgo: 21, date: "21 days ago", artifacts: 88.5, attribute: 91.0, total: 89.8 },
+          { id: "LDR-95008", campaign: "Urban Pedestrians 100F", daysAgo: 40, date: "40 days ago", artifacts: 99.2, attribute: 99.5, total: 99.4 }
+        ]
+      },
+      veltrix: {
+        lang: "en",
+        search: "",
+        category: "all",
+        maxPrice: 900,
+        wishlist: { p1: true },
+        cart: { p1: 1 },
+        showCart: false,
+        products: [
+          { id: "p1", nameEn: "BDT Astronaut Bluetooth Speaker", nameAr: "سماعة بلوتوث رائد الفضاء BDT", cat: "audio", catEn: "Audio", catAr: "صوتيات", price: 450, tag: "Bestseller" },
+          { id: "p2", nameEn: "MagSafe 20W Fast Charger", nameAr: "شاحن سريع 20 وات MagSafe", cat: "chargers", catEn: "Chargers", catAr: "شواحن", price: 620, tag: "New" },
+          { id: "p3", nameEn: "Matte Armor MagSafe Case", nameAr: "جراب حماية مطفي MagSafe", cat: "cases", catEn: "Cases", catAr: "جرابات", price: 290, tag: "Popular" },
+          { id: "p4", nameEn: "Pro ANC Wireless Earbuds", nameAr: "سماعة أذن لاسلكية عازلة للضوضاء", cat: "audio", catEn: "Audio", catAr: "صوتيات", price: 850, tag: "Premium" }
+        ]
+      }
+    };
+
+    function openDemoModal(appKey) {
+      const modal = document.getElementById("demoModal");
+      const meta = DEMO_META[appKey];
+      if (!modal || !meta) return;
+      DEMO_STATE.activeApp = appKey;
+      document.getElementById("demoModalTitle").textContent = meta.title;
+      document.getElementById("demoModalSub").textContent = meta.sub;
+      document.getElementById("demoExternalLink").href = meta.url;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      renderDemoBody();
+    }
+
+    function closeDemoModal() {
+      const modal = document.getElementById("demoModal");
+      if (!modal) return;
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function renderDemoLogin(appKey) {
+      const meta = DEMO_META[appKey];
+      return `
+        <div class="max-w-md mx-auto my-4 sm:my-8 rounded-2xl p-6 sm:p-8 border shadow-lg animate-panel" style="background-color: var(--bg-elevated); border-color: var(--border);">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold" style="background-color: var(--accent-soft); color: var(--accent);">Interactive Sandbox</span>
+            <span class="text-[11px]" style="color: var(--ink-muted);">${meta.roleLabel}</span>
+          </div>
+          <h4 class="font-serif-display text-xl font-semibold mb-1.5">Demo Access</h4>
+          <p class="text-xs leading-relaxed mb-5" style="color: var(--ink-secondary);">
+            Sign in with the easy demo credentials below to explore all features safely inside the portfolio.
+          </p>
+
+          <div class="p-3 rounded-xl mb-5 text-xs flex flex-wrap items-center justify-between gap-2 border" style="background-color: var(--bg); border-color: var(--border);">
+            <div>
+              <span style="color: var(--ink-muted);">User:</span> <strong class="font-mono" style="color: var(--accent);">${meta.user}</strong>
+              <span class="mx-2" style="color: var(--border);">|</span>
+              <span style="color: var(--ink-muted);">Pass:</span> <strong class="font-mono" style="color: var(--accent);">${meta.pass}</strong>
+            </div>
+            <button type="button" id="demoInstantEnterBtn" class="text-[11px] font-semibold underline" style="color: var(--gold);">1-Click Enter →</button>
+          </div>
+
+          <form id="demoLoginForm" class="space-y-3.5">
+            <div>
+              <label for="demoUserInput" class="block text-[11px] font-medium mb-1" style="color: var(--ink-secondary);">Username / Email</label>
+              <input id="demoUserInput" type="text" value="${meta.user}" class="w-full px-3.5 py-2.5 rounded-xl text-xs font-mono border outline-none" style="background-color: var(--bg); border-color: var(--border); color: var(--ink);">
+            </div>
+            <div>
+              <label for="demoPassInput" class="block text-[11px] font-medium mb-1" style="color: var(--ink-secondary);">Password</label>
+              <input id="demoPassInput" type="password" value="${meta.pass}" class="w-full px-3.5 py-2.5 rounded-xl text-xs font-mono border outline-none" style="background-color: var(--bg); border-color: var(--border); color: var(--ink);">
+            </div>
+            <p id="demoLoginErr" class="hidden text-[11px] text-red-500 font-medium"></p>
+            <button type="submit" class="w-full btn-primary py-2.5 rounded-xl text-xs font-semibold inline-flex items-center justify-center gap-2">
+              <i data-lucide="log-in" class="w-4 h-4"></i>
+              <span>Sign In to Interactive Demo</span>
+            </button>
+          </form>
+        </div>
+      `;
+    }
+
+    function renderQcDemo() {
+      const s = DEMO_STATE.qc;
+      const filteredRows = s.rows.filter(r => {
+        const matchShift = s.shift === "ALL" || r.shift === s.shift;
+        const matchSearch = !s.search || r.name.toLowerCase().includes(s.search.toLowerCase());
+        return matchShift && matchSearch;
+      });
+      const totalPassed = filteredRows.reduce((a, b) => a + b.passed, 0);
+      const totalFailed = filteredRows.reduce((a, b) => a + b.failed, 0);
+      const avgRate = filteredRows.length ? (filteredRows.reduce((a, b) => a + b.rate, 0) / filteredRows.length).toFixed(1) : "0.0";
+
+      const filteredUsers = s.users.filter(u => s.roleFilter === "ALL" || u.role === s.roleFilter);
+
+      let content = "";
+      if (s.tab === "overview") {
+        content = `
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            <div class="p-3.5 rounded-xl border" style="background-color: var(--bg-elevated); border-color: var(--border);">
+              <span class="text-[11px]" style="color: var(--ink-muted);">Active QCs</span>
+              <p class="text-xl font-bold mt-0.5">${filteredRows.length}</p>
+            </div>
+            <div class="p-3.5 rounded-xl border" style="background-color: var(--bg-elevated); border-color: var(--border);">
+              <span class="text-[11px]" style="color: var(--ink-muted);">Avg Pass Rate</span>
+              <p class="text-xl font-bold mt-0.5" style="color: var(--accent);">${avgRate}%</p>
+            </div>
+            <div class="p-3.5 rounded-xl border" style="background-color: var(--bg-elevated); border-color: var(--border);">
+              <span class="text-[11px]" style="color: var(--ink-muted);">Passed Labelers</span>
+              <p class="text-xl font-bold mt-0.5 text-emerald-600 dark:text-emerald-400">${totalPassed}</p>
+            </div>
+            <div class="p-3.5 rounded-xl border" style="background-color: var(--bg-elevated); border-color: var(--border);">
+              <span class="text-[11px]" style="color: var(--ink-muted);">Failed Labelers</span>
+              <p class="text-xl font-bold mt-0.5 text-red-500">${totalFailed}</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex gap-1.5">
+              ${["ALL", "M", "N", "ON"].map(sh => `<button type="button" data-qc-shift="${sh}" class="pill-tab ${s.shift === sh ? 'active' : ''} px-3 py-1 rounded-lg text-xs font-medium">${sh}</button>`).join("")}
+            </div>
+            <input id="qcDemoSearch" type="text" value="${s.search}" placeholder="Search QC name..." class="px-3 py-1.5 rounded-lg text-xs border outline-none w-full sm:w-52" style="background-color: var(--bg-elevated); border-color: var(--border); color: var(--ink);">
+          </div>
+          <div class="overflow-x-auto rounded-xl border" style="border-color: var(--border); background-color: var(--bg-elevated);">
+            <table class="w-full min-w-[480px] text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b" style="border-color: var(--border); color: var(--ink-muted);">
+                  <th class="py-2.5 px-3">QC Specialist</th>
+                  <th class="py-2.5 px-3">Shift</th>
+                  <th class="py-2.5 px-3">Passed / Target</th>
+                  <th class="py-2.5 px-3">Failed</th>
+                  <th class="py-2.5 px-3">Score</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y" style="border-color: var(--border);">
+                ${filteredRows.map(r => `
+                  <tr>
+                    <td class="py-2.5 px-3 font-medium">${r.name}</td>
+                    <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded font-semibold text-[11px]" style="background-color: var(--accent-soft); color: var(--accent);">${r.shift}</span></td>
+                    <td class="py-2.5 px-3 font-mono">${r.passed} / ${r.target}</td>
+                    <td class="py-2.5 px-3 font-mono text-red-500">${r.failed}</td>
+                    <td class="py-2.5 px-3 font-mono font-semibold ${r.rate >= 90 ? 'text-emerald-600 dark:text-emerald-400' : 'text-amber-500'}">${r.rate}%</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      } else if (s.tab === "roles") {
+        content = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <p class="text-xs" style="color: var(--ink-secondary);">Server-enforced PostgreSQL RBAC &amp; Invite-Link Access Scopes:</p>
+            <div class="flex flex-wrap gap-1.5">
+              ${["ALL", "Admin", "SSV", "SV", "QC"].map(role => `<button type="button" data-qc-role="${role}" class="pill-tab ${s.roleFilter === role ? 'active' : ''} px-2.5 py-1 rounded-lg text-[11px] font-medium">${role}</button>`).join("")}
+            </div>
+          </div>
+          <div class="space-y-2.5">
+            ${filteredUsers.map(u => `
+              <div class="p-3.5 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2" style="background-color: var(--bg-elevated); border-color: var(--border);">
+                <div>
+                  <span class="text-xs font-semibold">${u.name}</span>
+                  <span class="ml-2 px-2 py-0.5 rounded text-[10px] font-semibold" style="background-color: var(--gold-soft); color: var(--gold);">${u.role}</span>
+                  <span class="ml-1 px-2 py-0.5 rounded text-[10px] font-semibold" style="background-color: var(--accent-soft); color: var(--accent);">Shift: ${u.shift}</span>
+                </div>
+                <span class="text-[11px]" style="color: var(--ink-secondary);">${u.scope}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      } else {
+        content = `
+          <p class="text-xs mb-3" style="color: var(--ink-secondary);">Click <strong>Restore</strong> on any audit entry to test live one-click rollback:</p>
+          <div class="overflow-x-auto rounded-xl border" style="border-color: var(--border); background-color: var(--bg-elevated);">
+            <table class="w-full min-w-[520px] text-left text-xs border-collapse">
+              <thead>
+                <tr class="border-b" style="border-color: var(--border); color: var(--ink-muted);">
+                  <th class="py-2.5 px-3">Target &amp; Actor</th>
+                  <th class="py-2.5 px-3">Action</th>
+                  <th class="py-2.5 px-3">Delta</th>
+                  <th class="py-2.5 px-3">Reason</th>
+                  <th class="py-2.5 px-3 text-right">Rollback</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y" style="border-color: var(--border);">
+                ${s.audit.map(a => `
+                  <tr class="${a.cls}">
+                    <td class="py-2.5 px-3">
+                      <div class="font-semibold">${a.target}</div>
+                      <div class="text-[11px]" style="color: var(--ink-muted);">[${a.shift}] ${a.actor}</div>
+                    </td>
+                    <td class="py-2.5 px-3 font-semibold ${a.badge}">${a.action}</td>
+                    <td class="py-2.5 px-3 font-mono text-[11px]">${a.delta}</td>
+                    <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full text-[10px]" style="background-color: var(--gold-soft); color: var(--gold);">${a.reason}</span></td>
+                    <td class="py-2.5 px-3 text-right">
+                      ${a.restored
+                        ? `<span class="text-[11px] font-semibold text-emerald-500">Restored ✓</span>`
+                        : `<button type="button" data-qc-restore="${a.id}" class="btn-secondary px-2.5 py-1 rounded-lg text-[11px] font-medium">↩ Restore</button>`}
+                    </td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="animate-panel">
+          <div class="flex flex-wrap gap-2 mb-4 pb-3 border-b" style="border-color: var(--border);">
+            <button type="button" data-qc-subtab="overview" class="pill-tab ${s.tab === 'overview' ? 'active' : ''} px-3.5 py-1.5 rounded-lg text-xs font-medium">Overview &amp; Shifts</button>
+            <button type="button" data-qc-subtab="roles" class="pill-tab ${s.tab === 'roles' ? 'active' : ''} px-3.5 py-1.5 rounded-lg text-xs font-medium">Users &amp; RBAC</button>
+            <button type="button" data-qc-subtab="audit" class="pill-tab ${s.tab === 'audit' ? 'active' : ''} px-3.5 py-1.5 rounded-lg text-xs font-medium">Audit Log &amp; Restore</button>
+          </div>
+          ${content}
+        </div>
+      `;
+    }
+
+    function renderLidarDemo() {
+      const s = DEMO_STATE.lidar;
+      const limitMap = { yesterday: 1, last7: 7, last14: 14, last30: 30, allTime: 999 };
+      const maxDays = limitMap[s.range] || 999;
+      const filtered = s.tasks.filter(t => t.daysAgo <= maxDays);
+
+      const byCamp = {};
+      filtered.forEach(t => {
+        if (!byCamp[t.campaign]) byCamp[t.campaign] = { count: 0, a: 0, b: 0, tot: 0 };
+        byCamp[t.campaign].count++;
+        byCamp[t.campaign].a += t.artifacts;
+        byCamp[t.campaign].b += t.attribute;
+        byCamp[t.campaign].tot += t.total;
+      });
+      const colorCls = v => v >= 99 ? "text-emerald-400 border-emerald-400" : v >= 90 ? "text-amber-400 border-amber-400" : "text-red-400 border-red-400";
+
+      return `
+        <div class="animate-panel rounded-2xl p-4 sm:p-6 text-[#E8EBF5]" style="background: linear-gradient(145deg, #0A0E18 0%, #131A2B 100%); border: 1px solid #262F49;">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-[#262F49]">
+            <div>
+              <span class="text-[11px] font-mono text-[#59A6FF]">Signed in: demo@meti.ai · Live LiDAR Sheet API</span>
+              <h4 class="text-lg font-bold text-white mt-0.5">Meti Quality Dashboard</h4>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              ${[
+                ["yesterday", "Yesterday"],
+                ["last7", "7 Days"],
+                ["last14", "14 Days"],
+                ["last30", "30 Days"],
+                ["allTime", "All Time"]
+              ].map(([k, lbl]) => `
+                <button type="button" data-lidar-range="${k}" class="px-3 py-1 rounded-full text-[11px] font-medium border transition-colors ${s.range === k ? 'bg-[#2554F0] border-[#59A6FF] text-white' : 'border-[#262F49] text-[#7C87A3] hover:text-white'}">${lbl}</button>
+              `).join("")}
+            </div>
+          </div>
+
+          <div class="text-center p-5 rounded-xl mb-5 border border-[#59A6FF]/30 bg-[#19233A]/60">
+            <span class="text-3xl font-extrabold text-[#59A6FF]">${filtered.length}</span>
+            <p class="text-xs text-[#7C87A3] mt-1">LiDAR Tasks Matched</p>
+          </div>
+
+          <h5 class="text-xs font-bold uppercase tracking-wider text-[#59A6FF] mb-3">Campaign Accuracy Averages</h5>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+            ${Object.entries(byCamp).map(([camp, st]) => {
+              const avgA = (st.a / st.count).toFixed(1);
+              const avgB = (st.b / st.count).toFixed(1);
+              const avgT = (st.tot / st.count).toFixed(1);
+              return `
+                <div class="p-4 rounded-xl bg-[#131A2B] border border-[#262F49]">
+                  <div class="flex items-center justify-between gap-2 mb-3">
+                    <span class="text-xs font-semibold text-white truncate">${camp}</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#2554F0] text-white shrink-0">${st.count} tasks</span>
+                  </div>
+                  <div class="space-y-1.5 text-[11px] font-mono">
+                    <div class="flex justify-between px-2.5 py-1.5 rounded bg-[#19233A] border-l-2 ${colorCls(avgA)}"><span class="text-[#7C87A3]">Artifacts</span><span>${avgA}%</span></div>
+                    <div class="flex justify-between px-2.5 py-1.5 rounded bg-[#19233A] border-l-2 ${colorCls(avgB)}"><span class="text-[#7C87A3]">Attribute</span><span>${avgB}%</span></div>
+                    <div class="flex justify-between px-2.5 py-1.5 rounded bg-[#19233A] border-l-2 ${colorCls(avgT)}"><span class="text-[#7C87A3]">Total</span><span>${avgT}%</span></div>
+                  </div>
+                </div>
+              `;
+            }).join("")}
+          </div>
+
+          <h5 class="text-xs font-bold uppercase tracking-wider text-[#59A6FF] mb-2.5">Recent Task History</h5>
+          <div class="grid sm:grid-cols-2 gap-2.5">
+            ${filtered.map(t => `
+              <div class="p-3 rounded-xl bg-[#131A2B] border border-[#262F49] flex items-center justify-between gap-2 text-xs">
+                <div>
+                  <span class="font-mono font-semibold text-white">${t.id}</span>
+                  <span class="block text-[11px] text-[#7C87A3]">${t.campaign} · ${t.date}</span>
+                </div>
+                <span class="font-mono font-bold px-2.5 py-1 rounded-lg bg-[#19233A] ${t.total >= 99 ? 'text-emerald-400' : t.total >= 90 ? 'text-amber-400' : 'text-red-400'}">${t.total}%</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderVeltrixDemo() {
+      const s = DEMO_STATE.veltrix;
+      const isAr = s.lang === "ar";
+      const filtered = s.products.filter(p => {
+        const matchCat = s.category === "all" || p.cat === s.category;
+        const matchPrice = p.price <= s.maxPrice;
+        const q = s.search.trim().toLowerCase();
+        const matchQ = !q || p.nameEn.toLowerCase().includes(q) || p.nameAr.includes(q);
+        return matchCat && matchPrice && matchQ;
+      });
+      const cartCount = Object.values(s.cart).reduce((a, b) => a + b, 0);
+      const cartTotal = s.products.reduce((sum, p) => sum + ((s.cart[p.id] || 0) * p.price), 0);
+
+      return `
+        <div class="animate-panel rounded-2xl p-4 sm:p-6 text-slate-100" dir="${isAr ? 'rtl' : 'ltr'}" style="background: linear-gradient(150deg, #0D111C 0%, #151B2E 100%); border: 1px solid #26304A;">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold text-xs">V</span>
+              <span class="font-bold text-base tracking-tight">Veltrix</span>
+            </div>
+            <input id="veltrixSearch" type="text" value="${s.search}" placeholder="${isAr ? 'ابحث عن منتج...' : 'Search products...'}" class="flex-1 min-w-[160px] max-w-xs px-3 py-1.5 rounded-lg text-xs bg-white/5 border border-white/15 text-white outline-none">
+            <div class="flex items-center gap-2">
+              <button type="button" id="veltrixLangBtn" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-white/20 text-white">${isAr ? 'EN' : 'عربي'}</button>
+              <button type="button" id="veltrixCartToggle" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-500 hover:bg-indigo-400 text-white inline-flex items-center gap-1.5">
+                <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+                <span>${isAr ? 'السلة' : 'Cart'} (${cartCount})</span>
+              </button>
+            </div>
+          </div>
+
+          ${s.showCart ? `
+            <div class="mb-5 p-4 rounded-xl bg-white/5 border border-indigo-400/30">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold text-indigo-300">${isAr ? 'محتويات السلة' : 'Shopping Cart Summary'}</span>
+                <button type="button" id="veltrixClearCart" class="text-[11px] text-red-400 hover:underline">${isAr ? 'إفراغ السلة' : 'Clear Cart'}</button>
+              </div>
+              ${cartCount === 0 ? `<p class="text-xs text-slate-400">${isAr ? 'السلة فارغة حالياً.' : 'Your cart is empty.'}</p>` : `
+                <div class="space-y-1.5 text-xs mb-3">
+                  ${s.products.filter(p => s.cart[p.id] > 0).map(p => `
+                    <div class="flex justify-between">
+                      <span>${isAr ? p.nameAr : p.nameEn} × ${s.cart[p.id]}</span>
+                      <span class="font-mono text-indigo-300">EGP ${p.price * s.cart[p.id]}</span>
+                    </div>
+                  `).join("")}
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/10">
+                  <span class="text-xs font-bold">${isAr ? 'الإجمالي:' : 'Total:'} EGP ${cartTotal}</span>
+                  <button type="button" id="veltrixCheckoutBtn" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-slate-950">${isAr ? 'إتمام الطلب التجريبي' : 'Demo Checkout'}</button>
+                </div>
+              `}
+            </div>
+          ` : ''}
+
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div class="flex flex-wrap gap-1.5">
+              ${[
+                ["all", "All", "الكل"],
+                ["audio", "Audio", "صوتيات"],
+                ["chargers", "Chargers", "شواحن"],
+                ["cases", "Cases", "جرابات"]
+              ].map(([k, en, ar]) => `
+                <button type="button" data-veltrix-cat="${k}" class="px-3 py-1 rounded-full text-xs font-medium border ${s.category === k ? 'bg-indigo-500 border-indigo-400 text-white' : 'border-white/15 text-slate-300 hover:text-white'}">${isAr ? ar : en}</button>
+              `).join("")}
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <label for="veltrixPriceRange" class="text-slate-400">${isAr ? 'الحد الأقصى:' : 'Max Price:'} <strong class="text-white font-mono">EGP ${s.maxPrice}</strong></label>
+              <input id="veltrixPriceRange" type="range" min="250" max="900" step="50" value="${s.maxPrice}" class="accent-indigo-400 w-28">
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            ${filtered.map(p => `
+              <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between gap-3">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-500/20 text-indigo-300">${isAr ? p.catAr : p.catEn}</span>
+                    <button type="button" data-veltrix-wish="${p.id}" class="text-sm ${s.wishlist[p.id] ? 'text-rose-400' : 'text-slate-500 hover:text-rose-300'}" aria-label="Toggle wishlist">${s.wishlist[p.id] ? '♥' : '♡'}</button>
+                  </div>
+                  <h5 class="text-xs font-semibold text-white leading-snug mb-1">${isAr ? p.nameAr : p.nameEn}</h5>
+                  <p class="font-mono text-sm font-bold text-indigo-300">EGP ${p.price}</p>
+                </div>
+                <button type="button" data-veltrix-add="${p.id}" class="w-full py-1.5 rounded-lg text-xs font-semibold bg-white/10 hover:bg-indigo-500 text-white transition-colors">
+                  ${isAr ? '+ أضف للسلة' : '+ Add to Cart'}
+                </button>
+              </div>
+            `).join("") || `<p class="col-span-full text-center text-xs text-slate-400 py-6">${isAr ? 'لا توجد منتجات مطابقة للفلتر.' : 'No products match your filter.'}</p>`}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDemoBody() {
+      const body = document.getElementById("demoModalBody");
+      const logoutBtn = document.getElementById("demoLogoutBtn");
+      const appKey = DEMO_STATE.activeApp;
+      if (!body || !appKey) return;
+
+      const isSignedIn = DEMO_STATE.loggedIn[appKey];
+      if (logoutBtn) logoutBtn.classList.toggle("hidden", !isSignedIn);
+
+      if (!isSignedIn) {
+        body.innerHTML = renderDemoLogin(appKey);
+      } else if (appKey === "qc") {
+        body.innerHTML = renderQcDemo();
+      } else if (appKey === "lidar") {
+        body.innerHTML = renderLidarDemo();
+      } else if (appKey === "veltrix") {
+        body.innerHTML = renderVeltrixDemo();
+      }
+
+      bindDemoEvents();
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function bindDemoEvents() {
+      const appKey = DEMO_STATE.activeApp;
+      const form = document.getElementById("demoLoginForm");
+      const instantBtn = document.getElementById("demoInstantEnterBtn");
+      if (instantBtn) {
+        instantBtn.addEventListener("click", () => {
+          DEMO_STATE.loggedIn[appKey] = true;
+          showToast("Signed into " + DEMO_META[appKey].title.split(" — ")[0]);
+          renderDemoBody();
+        });
+      }
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const u = (document.getElementById("demoUserInput").value || "").trim().toLowerCase();
+          const p = (document.getElementById("demoPassInput").value || "").trim();
+          const meta = DEMO_META[appKey];
+          if ((u === meta.user.toLowerCase() || u === "demo") && p === meta.pass) {
+            DEMO_STATE.loggedIn[appKey] = true;
+            showToast("Welcome to the interactive demo!");
+            renderDemoBody();
+          } else {
+            const err = document.getElementById("demoLoginErr");
+            err.textContent = "Use demo credentials: " + meta.user + " / " + meta.pass;
+            err.classList.remove("hidden");
+          }
+        });
+      }
+
+      // QC Demo events
+      document.querySelectorAll("[data-qc-subtab]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          DEMO_STATE.qc.tab = btn.getAttribute("data-qc-subtab");
+          renderDemoBody();
+        });
+      });
+      document.querySelectorAll("[data-qc-shift]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          DEMO_STATE.qc.shift = btn.getAttribute("data-qc-shift");
+          renderDemoBody();
+        });
+      });
+      document.querySelectorAll("[data-qc-role]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          DEMO_STATE.qc.roleFilter = btn.getAttribute("data-qc-role");
+          renderDemoBody();
+        });
+      });
+      document.querySelectorAll("[data-qc-restore]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-qc-restore");
+          const item = DEMO_STATE.qc.audit.find(a => a.id === id);
+          if (item) {
+            item.restored = true;
+            showToast("Audit entry restored successfully!");
+            renderDemoBody();
+          }
+        });
+      });
+      const qcSearch = document.getElementById("qcDemoSearch");
+      if (qcSearch) {
+        qcSearch.addEventListener("input", (e) => {
+          DEMO_STATE.qc.search = e.target.value;
+          renderDemoBody();
+          const next = document.getElementById("qcDemoSearch");
+          if (next) { next.focus(); next.setSelectionRange(next.value.length, next.value.length); }
+        });
+      }
+
+      // LiDAR Demo events
+      document.querySelectorAll("[data-lidar-range]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          DEMO_STATE.lidar.range = btn.getAttribute("data-lidar-range");
+          renderDemoBody();
+        });
+      });
+
+      // Veltrix Demo events
+      const vLang = document.getElementById("veltrixLangBtn");
+      if (vLang) vLang.addEventListener("click", () => {
+        DEMO_STATE.veltrix.lang = DEMO_STATE.veltrix.lang === "en" ? "ar" : "en";
+        renderDemoBody();
+      });
+      const vCart = document.getElementById("veltrixCartToggle");
+      if (vCart) vCart.addEventListener("click", () => {
+        DEMO_STATE.veltrix.showCart = !DEMO_STATE.veltrix.showCart;
+        renderDemoBody();
+      });
+      const vClear = document.getElementById("veltrixClearCart");
+      if (vClear) vClear.addEventListener("click", () => {
+        DEMO_STATE.veltrix.cart = {};
+        showToast("Demo cart cleared");
+        renderDemoBody();
+      });
+      const vCheckout = document.getElementById("veltrixCheckoutBtn");
+      if (vCheckout) vCheckout.addEventListener("click", () => {
+        DEMO_STATE.veltrix.cart = {};
+        DEMO_STATE.veltrix.showCart = false;
+        showToast("Demo order placed! Thank you for testing Veltrix.");
+        renderDemoBody();
+      });
+      document.querySelectorAll("[data-veltrix-cat]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          DEMO_STATE.veltrix.category = btn.getAttribute("data-veltrix-cat");
+          renderDemoBody();
+        });
+      });
+      document.querySelectorAll("[data-veltrix-add]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-veltrix-add");
+          DEMO_STATE.veltrix.cart[id] = (DEMO_STATE.veltrix.cart[id] || 0) + 1;
+          showToast("Added to Veltrix cart");
+          renderDemoBody();
+        });
+      });
+      document.querySelectorAll("[data-veltrix-wish]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-veltrix-wish");
+          DEMO_STATE.veltrix.wishlist[id] = !DEMO_STATE.veltrix.wishlist[id];
+          renderDemoBody();
+        });
+      });
+      const vPrice = document.getElementById("veltrixPriceRange");
+      if (vPrice) vPrice.addEventListener("input", (e) => {
+        DEMO_STATE.veltrix.maxPrice = Number(e.target.value);
+        renderDemoBody();
+      });
+      const vSearch = document.getElementById("veltrixSearch");
+      if (vSearch) vSearch.addEventListener("input", (e) => {
+        DEMO_STATE.veltrix.search = e.target.value;
+        renderDemoBody();
+        const next = document.getElementById("veltrixSearch");
+        if (next) { next.focus(); next.setSelectionRange(next.value.length, next.value.length); }
+      });
+    }
+
+    // Bind Demo Modal open/close triggers inside DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-open-demo]").forEach(btn => {
+        btn.addEventListener("click", () => openDemoModal(btn.getAttribute("data-open-demo")));
+      });
+      const closeBtn = document.getElementById("closeDemoModalBtn");
+      const logoutBtn = document.getElementById("demoLogoutBtn");
+      const modal = document.getElementById("demoModal");
+      if (closeBtn) closeBtn.addEventListener("click", closeDemoModal);
+      if (logoutBtn) logoutBtn.addEventListener("click", () => {
+        if (DEMO_STATE.activeApp) {
+          DEMO_STATE.loggedIn[DEMO_STATE.activeApp] = false;
+          renderDemoBody();
+        }
+      });
+      if (modal) modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeDemoModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeDemoModal();
+      });
     });
   </script>
 </body>
